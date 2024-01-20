@@ -84,15 +84,18 @@ https://docs.google.com/presentation/d/1Ce55AkkZyK6oMZT6ODzvYuLw_O6MOujW/edit?us
 [NLP를 활용한 산업분석 기반 다이렉트 인덱싱_제출용.pptx](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/720262de-080d-4b3b-bf95-78ced06c9744/NLP%EB%A5%BC_%ED%99%9C%EC%9A%A9%ED%95%9C_%EC%82%B0%EC%97%85%EB%B6%84%EC%84%9D_%EA%B8%B0%EB%B0%98_%EB%8B%A4%EC%9D%B4%EB%A0%89%ED%8A%B8_%EC%9D%B8%EB%8D%B1%EC%8B%B1_%EC%A0%9C%EC%B6%9C%EC%9A%A9.pptx)
 
 - 코드
+
 https://drive.google.com/file/d/1ddDEDc0FqhLGvwuvYpAEPQ27gaD5gEcG/view?usp=sharing
 
 - 데이터
+
 https://drive.google.com/drive/folders/1nBozeSLWxHIGn0cyN9R_sqysh9bh_FJZ?usp=sharing
 
 [Dacon : 2023 Samsung AI Challenge Image Quality Assessment](https://dacon.io/competitions/official/236134/data)
 
 
 - Github
+
 https://github.com/Gayeon6423/Direct-Indexing-Based-on-Industry-Analysis-Using-NLP
 
 
