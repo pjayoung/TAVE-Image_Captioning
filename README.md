@@ -91,3 +91,14 @@ https://drive.google.com/file/d/1ddDEDc0FqhLGvwuvYpAEPQ27gaD5gEcG/view?usp=shari
 https://drive.google.com/drive/folders/1nBozeSLWxHIGn0cyN9R_sqysh9bh_FJZ?usp=sharing
 
 [Dacon : 2023 Samsung AI Challenge Image Quality Assessment](https://dacon.io/competitions/official/236134/data)
+
+## 8. 프로젝트 소감
+| 이름 | 소감 |
+| --- | --- |
+| 정가연 | 안녕하세요 TAVE 12기 정가연입니다. 저희 팀은 멀티모달 기반 이미지 캡셔닝 프로젝트를 진행했습니다. 프로젝트를 진행하며 두가지 이종 데이터(텍스트, 이미지)를 활용하는 멀티 모달에 대해 배울 수 있었고 NLP 모델과 CV모델에 대해서도 탐색해 볼 수 있어서 좋았습니다. 직접 논문을 읽고 코드를 구현해보며 딥러닝 분야에 대한 이해의 폭이 넓어질 수 있었던 좋은 프로젝트였다고 생각합니다.
+자영이, 상준 오빠, 인훈 오빠 모두 너무 좋은 팀원이였고 어려운 주제 임에도 모두들 매주 열정적으로 참여해준 덕분에 많은 것을 배울 수 있었습니다. 프로젝트 기간 동안 고생하셨고 감사했습니다 :D
+  |
+| 이인훈 | 안녕하세요. TAVE 12기 이인훈입니다. 후반기에는 전반기에 스터디로 진행했던 ‘컴퓨터 비전’을 바탕으로 ‘NLP’를 더해 ‘Multi Modal’을 구현하는 프로젝트를 진행하였습니다. 처음 스터디를 진행할 때는 딥러닝이 익숙하지 않아 조금은 어색한 모습이었다면 프로젝트는 스터디 때보다 약간 더 넓은 이해력을 바탕으로 성장한 모습으로 임할 수 있었습니다. 팀의 방향성이 목표를 향할 수 있도록 충분한 도움과 실력이 되지 못하여 아쉬운 마음입니다. ㅠㅠ
+ |
+| 박상준 |  | 
+| 박자영 |  |
