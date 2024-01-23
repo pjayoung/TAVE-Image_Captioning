@@ -48,7 +48,7 @@
 
 ---
 
-## 6-1. Introduction
+### 6-1. Introduction
 [주제 선정 배경]
 - CV 스터디원과 NLP스터디원이 모인 팀으로 딥러닝 분야에서 각광받고 있는 멀티 모달을 활용한 프로젝트를 진행하게 되었다.
 
@@ -74,7 +74,7 @@
 - 이미지 캡셔닝 : 주어진 이미지에 대한 캡션을 예측하고 생성해내는 작업
 
  
-## 6-2. Methodology
+### 6-2. Methodology
 - ResNet : Residual Block 구조가 쌓여 만들어진 모델, overfitting, gradient vanishing 문제를 해결하여 성능을 향상시킴
 - MobileNet : Depthwise Separable Convolution 이용하며 연산량이 크게 늘지 않으면서 성능 개선한 모델, 모바일과 같은 작은 규모에서도 사용이 용이함
 - GoogLeNet : Inception Module(1x1 Convolution 활용)을 통한 연산량 감소 및 성능 개선한 모델.
@@ -84,14 +84,14 @@
 - Data parallelism : 다수의 GPU를 병렬적으로 활용하는 기법 학습 속도 개선 효과를 가짐
 
 
-## 6-3. Data Preprocessing
+### 6-3. Data Preprocessing
 [Color to Black & White]
 - 모델 경량화를 위해 컬러 이미지를 흑백 이미지로 변환 => 학습 시간 단축 X, 성능 하락 => 사용 X
 [Image Size]
 - 이미지 사이즈 224 -> 이미지 사이즈 128 => 학습 시간 단축 O, 성능 유지 => 사용 O
 
 
-## 6-4. Model Train
+### 6-4. Model Train
 [Train Model] 
 - CNN : MobileNet, GoogLeNet
 - RNN : GRU
@@ -100,7 +100,7 @@
 - Learning rate = 0.01, Epochs = 10, Batch Size = 32, 64
 
 
-## 6-5. Results & Discussion
+### 6-5. Results & Discussion
 [모델 성능]
 - ResNet + LSTM 조합과 MobileNet + GRU 조합의 성능이 우수하게 나옴
 - MobileNet + GRU 조합의 성능과 학습 시간이 모두 우수하게 나왔으므로 최종 모델로 선택
