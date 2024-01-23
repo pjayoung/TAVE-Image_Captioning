@@ -23,7 +23,7 @@
 
 ---
 
-- 프로젝트 기간 : 2023년 11월 18일 ~ 2024년 1월월 23일
+- 프로젝트 기간 : 2023년 11월 18일 ~ 2024년 1월 23일
 - 컨퍼런스 발표일 : 2024년 1월 27일
 
 ## 4. 내용
@@ -97,7 +97,7 @@
 - RNN : GRU
 
 [Hyper Parameter] 
-- Learning rate = 0.01, Epochs = 10, Batch Size = 32, 64
+- Learning rate = 0.01, Epochs = 10, Batch Size = 32
 
 
 ### 6-5. Results & Discussion
