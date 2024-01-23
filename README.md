@@ -30,7 +30,7 @@
 
 ---
 
-2023년 8월에 시행되었던 Samsung AI Challenge는 카메라 영상 화질 정량 평가 및 자연어 정성 평가를 동시 생성하는 알고리즘 개발하는 대회이다. 
+2023년 8월에 시행되었던 Samsung AI Challenge는 카메라 영상 화질 정량 평가 및 자연어 정성 평가를 동시 생성하는 알고리즘 개발하는 대회를 기반으로 프로젝트를 진행한다.
 화질 평가 기준에는 모두가 동의하는 절대적인 기준이 없기 때문에 이미지를 입력 받으면 이미지의 선명도, 노이즈, 색감 등의 인지화질적인 요소를 종합적으로 고려하여 ‘temperature, tint, sharpness’와 같은 자연어로 화질을 표현하는 ‘이미지 캡셔닝’ 테스크를 수행한다.
 
 
@@ -47,44 +47,71 @@
 ## 6. 프로젝트 구성
 
 ---
-### Introduction
+## 6-1. Introduction
 [주제 선정 배경]
 - CV 스터디원과 NLP스터디원이 모인 팀으로 딥러닝 분야에서 각광받고 있는 멀티 모달을 활용한 프로젝트를 진행하게 되었다.
 
 [대회 설명]
+- 대회명 : 2023 Samsung AI Challenge : Image Quality Assessment
+- 주제 : 화질 평가 및 이미지 캡셔닝
+- 설명 : 카메라 영상 화질 정량 평가 및 자연어 정성 평가를 동시에 생성하는 알고리즘 개발 대회
 
-
+![대회](https://github.com/Gayeon6423/TAVE-Image_Captioning/assets/113704015/7fa89342-49fa-4a1d-b983-d15b4a72f0a8)
 
 [데이터 소개]
+- Train Data는 74,568개의 이미지, Test Data는 13,012개의 이미지로 구성되어 있다. 각 csv파일 형식의 데이터는 이미지 파일명, 이미지 경로, 화질 평가 점수, 캡셔닝 칼럼으로 이루어 진다.
+
+![이미지캡셔닝](https://github.com/Gayeon6423/TAVE-Image_Captioning/assets/113704015/07d18872-d7a5-402d-9d07-ef9d173de243)
 
 [멀티 모달 개념]
+- 멀티 모달 : 서로 다른 특성을 갖는 데이터 타입들을 함께 사용하는 학습법
 
 [이미지 캡셔닝 개념]
-
+- 이미지 캡셔닝 : 주어진 이미지에 대한 캡션을 예측하고 생성해내는 작업
 
  
-### Methodology
-- ResNet
-- MobileNet
-- GoogLeNet
-- LSTM
-- GRU
-- Drop-out
-- Data parallelism 
+## 6-2. Methodology
+- ResNet : Residual Block 구조가 쌓여 만들어진 모델, overfitting, gradient vanishing 문제를 해결하여 성능을 향상시킴
+- MobileNet : Depthwise Separable Convolution 이용하며 연산량이 크게 늘지 않으면서 성능 개선한 모델, 모바일과 같은 작은 규모에서도 사용이 용이함
+- GoogLeNet : Inception Module(1x1 Convolution 활용)을 통한 연산량 감소 및 성능 개선한 모델.
+- LSTM : 기존 RNN 모델에 cell-state가 추가된 구조, 3개의 Gate를 통해 메모리 값을 균일하게 유지하면서 꼭 필요한 만큼의 정보를 기억하는 모델
+- GRU : LSTM의 단점을 개선한 모델로 두 개의 Gate로 효율적 계산가능, 빠른 학습, 낮은 계산 복잡성 가짐
+- Drop-out : Regularization의 일종으로 Layer에서 각각 독립적인 unit을 일정 비율에 맞춰 삭제하는 기법
+- Data parallelism : 다수의 GPU를 병렬적으로 활용하는 기법 학습 속도 개선 효과를 가짐
 
-### Data Preprocessing
-- Color & Gray
-- Image Size
 
-### Model Train
-- Train Model : CNN(MobileNet, GoogLeNet) + RNN(GRU)
-- Hyper Parameter : Learning rate = 0.01, Epochs = 10, Batch Size = 32, 64
+## 6-3. Data Preprocessing
+[Color to Black & White]
+- 모델 경량화를 위해 컬러 이미지를 흑백 이미지로 변환 => 학습 시간 단축 X, 성능 하락 => 사용 X
+[Image Size]
+- 이미지 사이즈 224 -> 이미지 사이즈 128 => 학습 시간 단축 O, 성능 유지 => 사용 O
 
-### Results & Discussion
-- 모델 성능
-- 한계점
-- 개선 방향
-- 의의
+
+## 6-4. Model Train
+[Train Model] 
+- CNN : MobileNet, GoogLeNet
+- RNN : GRU
+
+[Hyper Parameter] 
+- Learning rate = 0.01, Epochs = 10, Batch Size = 32, 64
+
+
+## 6-5. Results & Discussion
+[모델 성능]
+- ResNet + LSTM 조합과 MobileNet + GRU 조합의 성능이 우수하게 나옴
+- MobileNet + GRU 조합의 성능과 학습 시간이 모두 우수하게 나왔으므로 최종 모델로 선택
+
+![소요시간](https://github.com/Gayeon6423/TAVE-Image_Captioning/assets/113704015/33d61cd2-3024-4294-ac48-393c564f035c)
+
+
+[한계점 및 개선 방향]
+- GPU 자원의 한계 => 모델 이분화를 통하여 경량화 개선 예정
+- 모델의 성능보다 경량화에 비중을 맞춘 진행 => 다양한 모델을 찾고 파라미터 조정 진행하며 개선 예정
+
+[의의]
+- 팀원들 모두 멀티모달의 개념 조차 알지 못했지만 프로젝트를 진행하며 이론 공부에 더해서 직접 구현까지 해봤다는데 의의를 둠
+- NLP 모델과 CV 모델을 공부해볼 수 있었고 이미지 캡셔닝 테스크에 대한 전반적인 과정을 배울 수 있었음
+
 
 ---
 
